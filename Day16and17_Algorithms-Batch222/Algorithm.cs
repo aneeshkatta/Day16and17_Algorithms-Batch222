@@ -23,7 +23,6 @@ namespace Day16and17_Algorithms_Batch222
                         counter++;
                         break;
                     }
-
                 }
                 if (counter == 0)
                 {
