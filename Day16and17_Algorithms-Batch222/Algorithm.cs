@@ -6,27 +6,31 @@ using System.Threading.Tasks;
 
 namespace Day16and17_Algorithms_Batch222
 {
-    class Anagram
+    class PrimeNumbers
     {
-        public static void Check_Anagram()
+        public static void PrimeCheck()
         {
-            string str1 = "ranger";
-            string str2 = "angerr";
-            char[] ch1 = str1.ToLower().ToCharArray();
-            char[] ch2 = str2.ToLower().ToCharArray();
-            Array.Sort(ch1);
-            Array.Sort(ch2);
-            string val1 = new string(ch1);
-            string val2 = new string(ch2);
+            int startNumber = 2;
+            int endNumber = 20;
+            Console.WriteLine($"The Prime Numbers between 0 and 1000 are : ");
+            for (int i = startNumber; i <= endNumber; i++)
+            {
+                int counter = 0;
+                for (int j = 2; j <= i / 2; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        counter++;
+                        break;
+                    }
 
-            if (val1 == val2)
-            {
-                Console.WriteLine("Both the strings are Anagrams");
+                }
+                if (counter == 0)
+                {
+                    Console.Write("{0} ", i);
+                }
             }
-            else
-            {
-                Console.WriteLine("Both the strings are not Anagrams");
-            }
+            Console.ReadLine();
         }
     }
 }

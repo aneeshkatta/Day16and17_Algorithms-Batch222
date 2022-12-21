@@ -10,7 +10,7 @@ namespace Day16and17_Algorithms_Batch222
     {
         static void Main(string[] args)
         {
-            Anagram.Check_Anagram();
+            PrimeNumbers.PrimeCheck();
         }
     }
 }
