@@ -6,30 +6,39 @@ using System.Threading.Tasks;
 
 namespace Day16and17_Algorithms_Batch222
 {
-    class PrimeNumbers
+    class SortingClass
     {
-        public static void PrimeCheck()
+        public static void InsertionSort()
         {
-            int startNumber = 2;
-            int endNumber = 1000;
-            Console.WriteLine($"The Prime Numbers between 0 and 1000 are : ");
-            for (int i = startNumber; i <= endNumber; i++)
+            string[] arr = { "cv", "yz", "ab", "cd", "ef" };
+            int n = arr.Length - 1, flag;
+            string val;
+            Console.WriteLine("Insertion Sort");
+            Console.Write("Initial array is:");
+            for (int i = 0; i < n; i++)
             {
-                int counter = 0;
-                for (int j = 2; j <= i / 2; j++)
+                Console.Write(arr[i] + " ");
+            }
+            for (int i = 1; i < n; i++)
+            {
+                val = arr[i];
+                flag = 0;
+                for (int j = i - 1; j >= 0 && flag != 1;)
                 {
-                    if (i % j == 0)
+                    if (val.CompareTo(arr[j]) < 0)
                     {
-                        counter++;
-                        break;
+                        arr[j + 1] = arr[j];
+                        j--;
+                        arr[j + 1] = val;
                     }
-                }
-                if (counter == 0)
-                {
-                    Console.Write("{0} ", i);
+                    else flag = 1;
                 }
             }
-            Console.ReadLine();
+            Console.Write("\nSorted Array after insertion sort is:\n ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
         }
     }
 }
