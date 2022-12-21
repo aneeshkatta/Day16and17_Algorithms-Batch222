@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace Day16and17_Algorithms_Batch222
 {
-    class SortingClass
+    class PrimeNumbers
     {
-        public static void BubbleSort()
+        public static void PrimeCheck()
         {
-            int[] arr = { 898, 555, 455, 988, 153 };
-            int temp;
-            for (int j = 0; j <= arr.Length - 2; j++)
+            int startNumber = 2;
+            int endNumber = 1000;
+            Console.WriteLine($"The Prime Numbers between 0 and 1000 are : ");
+            for (int i = startNumber; i <= endNumber; i++)
             {
-                for (int i = 0; i <= arr.Length - 2; i++)
+                int counter = 0;
+                for (int j = 2; j <= i / 2; j++)
                 {
-                    if (arr[i] > arr[i + 1])
+                    if (i % j == 0)
                     {
-                        temp = arr[i + 1];
-                        arr[i + 1] = arr[i];
-                        arr[i] = temp;
+                        counter++;
+                        break;
                     }
                 }
-            }
-            Console.WriteLine("Sorted:");
-            foreach (int item in arr)
-            {
-                Console.Write(item + " ");
+                if (counter == 0)
+                {
+                    Console.Write("{0} ", i);
+                }
             }
             Console.ReadLine();
         }
